@@ -18,7 +18,7 @@ function Contact() {
       message: data.message,
     };
     try {
-      await axios.post("https://getform.io/f/raeqjora", userInfo);
+      await axios.post("https://getform.io/f/apjmomxa", userInfo);
       toast.success("Your message has been sent");
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ function Contact() {
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Enter your fullname"
+                placeholder="Enter your full Name"
               />
               {errors.name && <span>This field is required</span>}
             </div>

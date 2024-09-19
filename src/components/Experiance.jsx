@@ -3,7 +3,7 @@ import html from "../../public/html.png";
 import css from "../../public/css.jpg";
 import java from "../../public/java.png";
 import javascript from "../../public/javascript.png";
-import oracle from "../../public/oracle.png";
+import Mysql from "../../public/pngwing.com.png";
 import spring from "../../public/spring.png";
 import springBoot from "../../public/springBoot.jpg";
 function Experiance() {
@@ -23,15 +23,17 @@ function Experiance() {
       logo: java,
       name: "Java",
     },
-    {
+
+
+   /*  {
       id: 4,
       logo: javascript,
       name: "Spring Mvc",
-    },
+    }, */
     {
       id: 5,
-      logo: oracle,
-      name: "Oracle",
+      logo: Mysql,
+      name: "Mysql",
     },
     {
       id: 6,

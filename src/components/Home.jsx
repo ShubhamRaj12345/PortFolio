@@ -37,11 +37,10 @@ function Home() {
             </div>
             <br />
             <p className="text-sm md:text-md text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Quisquam, recusandae consequatur. Accusamus sint libero eligendi
-              laborum fuga repudiandae? Asperiores tempore eos animi dolores
-              corrupti! Sint quos, mollitia architecto aliquam nesciunt, optio
-              cum delectus sit voluptatum aut ratione quaerat veniam aperiam!
+              I'm Shubham Raj, a B.Tech CSE student aspiring to become a Java developer, specializing in backend
+              development. I aim to master Java frameworks like Spring and Hibernate, focusing on building scalable
+              applications. Through projects and internships,
+              I will enhance my skills to create innovative software solutions for real-world challenges.
             </p>
             <br />
             {/* social media icons */}
@@ -55,7 +54,8 @@ function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="/" target="_blank">
+                    <a href="https://www.linkedin.com/in/shubham-raj-70678829a?utm_source=share&utm_campaign
+                    =share_via&utm_content=profile&utm_medium=android_app/" target="_blank">
                       <FaLinkedin className="text-2xl cursor-pointer" />
                     </a>
                   </li>
@@ -73,7 +73,7 @@ function Home() {
               </div>
               <div className=" space-y-2">
 
-                 { /*  yaha mainie conmmnet kiya  hai -->*/}
+                 { /*  yaha maine comment kiya hai -->*/}
 
                 <h1 className="font-bold text-center"> </h1>
                 <div className="flex space-x-5">

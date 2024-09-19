@@ -27,11 +27,11 @@ function PortFolio() {
       logo: nodejs,
       name: "NodeJS",
     }, */
-    /* {
+    {
       id: 5,
       logo: python,
       name: "Python",
-    }, */
+    },
     {
       id: 6,
       logo: java,
