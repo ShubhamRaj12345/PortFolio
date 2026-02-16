@@ -1,95 +1,213 @@
-import React, { useState } from "react";
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import pic from "../../public/FB_IMG_1669432647568.jpg";
+// import { AiOutlineMenu } from "react-icons/ai";
+// import { IoCloseSharp } from "react-icons/io5";
+// import { Link } from "react-scroll";
+
+// function Navbar() {
+//   const [menu, setMenu] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+
+//   const navItems = ["Home", "About", "Portfolio", "Experience", "Contact"];
+
+//   // Scroll blur effect
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 50);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <>
+//       <div
+//         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+//         ${
+//           scrolled
+//             ? "backdrop-blur-lg bg-black/70 shadow-lg"
+//             : "bg-black"
+//         }`}
+//       >
+//         <div className="max-w-screen-2xl mx-auto px-4 md:px-20 h-16 flex justify-between items-center text-white">
+          
+//           {/* Logo Section */}
+//           <div className="flex items-center space-x-3">
+//             <img
+//               src={pic}
+//               alt="profile"
+//               className="h-11 w-11 rounded-full border-2 border-green-500"
+//             />
+//             <div>
+//               <h1 className="text-lg font-semibold">
+//                 Shubham Raj
+//               </h1>
+//               <p className="text-sm text-green-400">
+//                 Java Developer
+//               </p>
+//             </div>
+//           </div>
+
+//           {/* Desktop Menu */}
+//           <ul className="hidden md:flex space-x-8 font-medium">
+//             {navItems.map((item, index) => (
+//               <li key={index} className="cursor-pointer">
+//                 <Link
+//                   to={item}
+//                   smooth={true}
+//                   duration={500}
+//                   offset={-70}
+//                   className="hover:text-green-400 transition duration-200"
+//                 >
+//                   {item}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+
+//           {/* Mobile Menu Icon */}
+//           <div
+//             className="md:hidden cursor-pointer"
+//             onClick={() => setMenu(!menu)}
+//           >
+//             {menu ? <IoCloseSharp size={26} /> : <AiOutlineMenu size={26} />}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Slide Menu */}
+//       <div
+//         className={`fixed top-16 left-0 w-full h-screen bg-black text-white 
+//         transform transition-transform duration-300 md:hidden
+//         ${menu ? "translate-x-0" : "-translate-x-full"}`}
+//       >
+//         <ul className="flex flex-col items-center justify-center h-full space-y-6 text-xl font-semibold">
+//           {navItems.map((item, index) => (
+//             <li key={index}>
+//               <Link
+//                 to={item}
+//                 smooth={true}
+//                 duration={500}
+//                 offset={-70}
+//                 onClick={() => setMenu(false)}
+//                 className="hover:text-green-400 transition duration-200"
+//               >
+//                 {item}
+//               </Link>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+import React, { useEffect, useState } from "react";
 import pic from "../../public/FB_IMG_1669432647568.jpg";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-scroll";
+
 function Navbar() {
   const [menu, setMenu] = useState(false);
-  const navItems = [
-    {
-      id: 1,
-      text: "Home",
-    },
-    {
-      id: 2,
-      text: "About",
-    },
-    {
-      id: 3,
-      text: "Portfolio",
-    },
-    {
-      id: 4,
-      text: "Experiance",
-    },
-    {
-      id: 5,
-      text: "Contact",
-    },
-  ];
+  const [scrolled, setScrolled] = useState(false);
+
+  const navItems = ["Home", "About", "Portfolio", "Experience", "Contact"];
+
+  // Scroll blur effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-white">
-        <div className="flex justify-between items-center h-16">
-          <div className=" flex space-x-2">
-            <img src={pic} className="h-12 w-12 rounded-full" alt="" />
-            <h1 className="font-semibold text-xl cursor-pointer">
-              Shubham Raj<span className="text-green-500 text-2xl"></span>
-              <p className="text-sm">Java Developer</p>
-            </h1>
-          </div>
-          {/* desktop navbar */}
-          <div>
-            <ul className="hidden md:flex space-x-8">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 cursor-pointer"
-                  key={id}
-                >
-                  <Link
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div onClick={() => setMenu(!menu)} className="md:hidden">
-              {menu ? <IoCloseSharp size={24} /> : <AiOutlineMenu size={24} />}
+      {/* NAVBAR */}
+      <div
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled ? "backdrop-blur-lg bg-black/70 shadow-lg" : "bg-black"
+        }`}
+      >
+        <div className="max-w-screen-2xl mx-auto px-4 md:px-20 h-16 flex justify-between items-center text-white">
+          
+          {/* Logo Section */}
+          <div className="flex items-center space-x-3">
+            <img
+              src={pic}
+              alt="profile"
+              className="h-11 w-11 rounded-full border-2 border-green-500"
+            />
+            <div>
+              <h1 className="text-lg font-semibold">Shubham Raj</h1>
+              <p className="text-sm text-green-400">Java Developer</p>
             </div>
           </div>
-        </div>
-        {/* mobile navbar */}
-        {menu && (
-          <div className="bg-white">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
-                  key={id}
+
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex space-x-8 font-medium">
+            {navItems.map((item, index) => (
+              <li key={index} className="cursor-pointer">
+                <Link
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="hover:text-green-400 transition duration-200"
                 >
-                  <Link
-                    onClick={() => setMenu(!menu)}
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Menu Icon */}
+          <div
+            className="md:hidden cursor-pointer"
+            onClick={() => setMenu(!menu)}
+          >
+            {menu ? <IoCloseSharp size={26} /> : <AiOutlineMenu size={26} />}
           </div>
-        )}
+        </div>
+      </div>
+
+      {/* Mobile Slide Menu */}
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-black text-white z-50
+        transform transition-transform duration-300 md:hidden ${
+          menu ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <ul className="flex flex-col items-center justify-center h-full space-y-6 text-xl font-semibold">
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setMenu(false)}
+                className="hover:text-green-400 transition duration-200 cursor-pointer"
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
 }
 
 export default Navbar;
+

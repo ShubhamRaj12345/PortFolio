@@ -1,101 +1,127 @@
+
 import React from "react";
-import pic from "../../public/mypic.jpg";
-import { FaSquareFacebook } from "react-icons/fa6";
+import pic from "../../public/photo.jpg";
+import { FaEnvelope, FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
-import { FaTelegram } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 
 function Home() {
   return (
-    <>
-      <div
-        name="Home"
-        className="relative w-full h-screen bg-black text-white overflow-hidden"
-      >
-        {/* Full-screen background stars animation */}
-        <div className="stars"></div>
+    <section
+      name="Home"
+      className="relative min-h-screen bg-black text-white overflow-hidden flex items-center"
+    >
+      {/* 🌌 FULL STAR SKY */}
+      <div className="star-sky">
+        {/* ⭐ STARS */}
+        {Array.from({ length: 180 }).map((_, i) => (
+          <span
+            key={i}
+            className={`star ${i % 4 === 0 ? "big" : "small"}`}
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+            }}
+          />
+        ))}
 
-        <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28 relative z-10">
-          <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">
-              <span className="text-xl">Welcome In My Feed</span>
-              <div className="flex space-x-1 text-2xl md:text-4xl">
-                <h1>Hello, I'm a </h1>
-                <ReactTyped
-                  className="text-red-700 font-bold"
-                  strings={["Shubham Raj", "Java Developer", "Programmer", "Coder"]}
-                  typeSpeed={40}
-                  backSpeed={50}
-                  loop={true}
-                />
-              </div>
-              <br />
-              <p className="text-sm md:text-md text-justify">
-                I'm Shubham Raj, a B.Tech CSE student aspiring to become a Java developer, specializing in backend
-                development. I aim to master Java frameworks like Spring and Hibernate, focusing on building scalable
-                applications. Through projects and internships, I will enhance my skills to create innovative software solutions for real-world challenges.
-              </p>
-              <br />
-              <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
-                <div className="space-y-2">
-                  <h1 className="font-bold text-center ">Available on</h1>
-                  <ul className="flex space-x-5">
-                    <li>
-                      <a href="/" target="_blank">
-                        <FaSquareFacebook className="text-2xl cursor-pointer" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/shubham-raj-70678829a" target="_blank">
-                        <FaLinkedin className="text-2xl cursor-pointer" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/" target="_blank">
-                        <IoLogoYoutube className="text-2xl cursor-pointer" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/" target="_blank">
-                        <FaTelegram className="text-2xl cursor-pointer" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h1 className="font-bold text-center"> </h1>
-                  <div className="flex space-x-5">
-                    {/* Tech icons can be added here */}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1">
-              {/* Image with bouncing effect */}
-              <div
-                className="relative w-[80vw] max-w-[480px] h-[80vw] max-h-[480px] flex items-center justify-center"
-                style={{ animation: "bounce-continuous 3s ease-in-out infinite" }}
-              >
-                {/* Outer Dotted Border Frame */}
-                <div className="absolute inset-0 rounded-full border-8 border-dotted border-indigo-500 shadow-[0_0_25px_rgba(75,0,130,0.8)]"></div>
-
-                {/* Inner Image (continuously bouncing) */}
-                <img
-                  src={pic}
-                  className="rounded-full w-[75vw] max-w-[450px] h-[75vw] max-h-[450px] border-4 border-transparent"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* ☄️ SHOOTING STARS */}
+        <span className="shooting-star one"></span>
+        <span className="shooting-star two"></span>
+        <span className="shooting-star three"></span>
       </div>
 
-      <hr />
-    </>
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 md:px-20 py-24">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-14">
+
+          {/* LEFT */}
+          <div className="md:w-1/2 space-y-6 text-center md:text-left">
+            <span className="text-gray-400 text-lg">
+              Welcome to my portfolio
+            </span>
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+              Hi, I’m{" "}
+              <span className="text-green-400 font-bold">
+                <ReactTyped
+                  strings={["Shubham Raj", "Java Developer", "Backend Engineer"]}
+                  typeSpeed={40}
+                  backSpeed={50}
+                  loop
+                />
+              </span>
+            </h1>
+
+            <p className="text-gray-300 text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+              Java backend developer passionate about building scalable,
+              high-performance applications using Spring Boot.
+            </p>
+
+            {/* <div className="flex justify-center md:justify-start gap-6 pt-4">
+              <FaSquareFacebook className="text-2xl hover:text-green-400 transition" />
+              <FaLinkedin className="text-2xl hover:text-green-400 transition" />
+              <IoLogoYoutube className="text-2xl hover:text-green-400 transition" />
+              <FaTelegram className="text-2xl hover:text-green-400 transition" />
+            </div> */}
+
+
+           <div className="flex justify-center md:justify-start gap-6 pt-6">
+  <a href="mailto:shubhamsinha20000@gmail.com" target="_blank" rel="noopener noreferrer">
+    <FaEnvelope className="text-2xl text-white hover:text-green-400 hover:scale-125 transition-transform duration-300" />
+  </a>
+
+  <a href="https://www.linkedin.com/in/shubham-raj7061" target="_blank" rel="noopener noreferrer">
+    <FaLinkedin className="text-2xl  to-white hover:text-green-400 hover:scale-125 transition-transform duration-300" />
+  </a>
+ 
+   <a
+    href="https://github.com/ShubhamRaj12345"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaGithub className="text-2xl text-white hover:text-green-400 hover:scale-125 transition-transform duration-300" />
+  </a>
+
+
+
+   {/* Download Resume Button */}
+  <a
+    href="/pdf/shubham__Resume.pdf" // replace with your resume path
+    download
+    className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded transition duration-300"
+  >
+    Download Resume
+  </a>
+</div>
+
+
+          </div>
+
+          {/* RIGHT IMAGE */}
+<div className="md:w-1/2 flex justify-center">
+  <div
+    className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-xl overflow-hidden
+               cursor-pointer transform transition duration-500 ease-in-out
+               hover:scale-105 hover:shadow-[0_0_40px_10px_rgba(34,197,94,0.8)]
+               hover:animate-image-rotate"
+  >
+    <img
+      src={pic}
+      alt="Shubham Raj"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
+
+        </div>
+      </div>
+    </section>
   );
 }
 
 export default Home;
+
