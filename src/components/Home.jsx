@@ -10,7 +10,8 @@ function Home() {
   return (
     <section
       name="Home"
-      className="relative min-h-screen bg-black text-white overflow-hidden flex items-center"
+   className="relative min-h-screen w-full bg-black text-white overflow-hidden md:flex md:items-center md:justify-center"
+
     >
       {/* 🌌 FULL STAR SKY */}
       <div className="star-sky">
