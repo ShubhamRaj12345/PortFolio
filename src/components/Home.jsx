@@ -90,7 +90,7 @@ function Home() {
 
    {/* Download Resume Button */}
   <a
-    href="public/pdf/shubham__Resume.pdf" // replace with your resume path
+    href="public/pdf/shubham_Resume.pdf" // replace with your resume path
     download
     className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded transition duration-300"
   >
