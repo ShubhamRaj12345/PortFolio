@@ -99,7 +99,7 @@ function Home() {
 
 
   <a
-  href="/pdf/Shubham_Resume.pdf"
+  href="/pdf/Shubham_Resume_Backend_Developer.pdf"
   download
   className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded transition duration-300"
 >
